@@ -1,4 +1,4 @@
-/*globals $, clearInterval, setInterval, window, setTimeout */
+/*globals window, $, clearInterval, setInterval */
 
 $(function () {
   "use strict";
