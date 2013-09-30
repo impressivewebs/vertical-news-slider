@@ -64,7 +64,7 @@ a {
   
   .news-headlines .highlight {
      width: 100%;
-     background: #fff;
+     background: #ededed;
      border-top: solid 1px #999;
      border-left: solid 1px #999;
      border-bottom: solid 1px #999;
@@ -87,7 +87,7 @@ a {
    float: left;
    border: solid 1px #999;
    width: 51%;
-   background: #fff;
+   background: #ededed;
    position: relative;
    z-index: 5;
    margin-left: -1px;
@@ -107,7 +107,7 @@ a {
 
 .news-content {
     position: absolute;
-    background: white;
+    background: #ededed;
     z-index: 10;
     padding: 10px;
     top: 0;
