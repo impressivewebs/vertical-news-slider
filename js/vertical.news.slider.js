@@ -33,7 +33,7 @@ $(function () {
     if (newsPreview.height() < newsList.height()) {
       newsPreview.height(newsList.height());
     } else if ((newsList.height() < newsPreview.height()) && (newsList.height() > parseInt(newsPreview.css('min-height').replace('px', ''), 10))) {
-        newsPreview.height(newsList.height());
+      newsPreview.height(newsList.height());
     }
 
   }
