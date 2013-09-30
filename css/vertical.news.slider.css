@@ -1,17 +1,3 @@
-.news-demo {
-  background: #ededed;
-  padding: 20px;
-}
-
-.news-demo h1 {
-  text-align: center;
-  font-family: Arial, sans-serif;
-  color: #777;
-  margin-bottom: 40px;
-}
-
-/* you don't need the styles above */
-
 .news-holder p {
     margin-bottom: 12px;
 }

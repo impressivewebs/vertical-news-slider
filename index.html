@@ -2,12 +2,44 @@
 <html>
 <head>
 <meta charset=utf-8 />
-<title>Vertical News Slider</title>
+<title>jQuery Vertical News Slider</title>
+<style>
+.news-demo {
+  background: #ededed;
+  padding: 20px;
+}
+
+.news-demo h1 {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  color: #777;
+  margin-bottom: 40px;
+}
+
+.news-demo .p {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 22px;
+  margin-top: 70px;
+}
+
+.news-demo .p ~ p {
+  margin-top: 0;
+}
+
+.news-demo .p a {
+  text-decoration: underline;
+}
+
+.news-demo .p a:hover {
+  color: red;
+}
+</style>
 <link rel="stylesheet" href="css/vertical.news.slider.css">
 </head>
 <body class="news-demo">
 
-  <h1>Responsive Animated Vertical News Slider</h1>
+  <h1>jQuery Vertical News Slider</h1>
 
   <div class="news-holder cf">
 
@@ -69,7 +101,22 @@
 
   </div><!-- .news-holder -->
 
+  <p class="p"><a href="https://github.com/impressivewebs/vertical-news-slider">View on GitHub</a></p>
+
+  <p class="p"><a href="http://www.impressivewebs.com/jquery-vertical-news-slider/">View Blog Post</a></p>
+
 <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
 <script src="js/vertical.news.slider.js"></script>
+<script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-1965499-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
 </body>
 </html>
