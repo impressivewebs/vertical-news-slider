@@ -80,6 +80,8 @@ $(function () {
       $('.news-content:nth-child(' + indexEl + ')').addClass('top-content');
 
       clearInterval(myTimer);
+      // comment out the line below if you don't
+      // want it to rotate automatically
       doTimedSwitch();
 
     });
