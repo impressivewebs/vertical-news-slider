@@ -1,0 +1,161 @@
+.news-demo {
+  background: #ededed;
+  padding: 20px;
+}
+
+.news-demo h1 {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  color: #777;
+  margin-bottom: 40px;
+}
+
+/* you don't need the styles above */
+
+.news-holder p {
+    margin-bottom: 12px;
+}
+
+.news-holder {
+    max-width: 500px;
+    margin: 0 auto;
+    font-family: Verdana, sans-serif;
+    font-size: 13px;
+}
+
+.news-holder * {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+a {
+  color: #336699;
+  text-decoration: none;
+}
+
+.news-headlines {
+  list-style: none;
+  position: relative;
+}
+
+  .news-headlines li {
+    padding: 5px 20px 5px 24px;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 20;
+    color: #336699;
+  }
+
+  .nh-anim {
+    -webkit-transition: all .75s ease-out;
+    -moz-transition: all .75s ease-out;
+    -o-transition: all .75s ease-out;
+    transition: all .75s ease-out;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+  
+  .news-headlines li:before {
+    content: "";
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    background: #888;
+    vertical-align: middle;
+    margin-left: -12px;
+    margin-right: 7px;
+  }
+
+  .news-headlines li:hover, a:hover {
+      cursor: pointer;
+      text-decoration: underline;
+  }
+  
+  .news-headlines .highlight {
+     width: 100%;
+     background: #fff;
+     border-top: solid 1px #999;
+     border-left: solid 1px #999;
+     border-bottom: solid 1px #999;
+     position: absolute;
+     top: 0;
+     left: 0;
+     z-index: 10;
+  }
+
+  .news-headlines .highlight:before {
+    display: none;
+  }
+
+.news-headlines {
+   float: left;
+   width: 49%;
+}
+
+.news-preview {
+   float: left;
+   border: solid 1px #999;
+   width: 51%;
+   background: #fff;
+   position: relative;
+   z-index: 5;
+   margin-left: -1px;
+   min-height: 304px;
+   position: relative;
+}
+
+  .news-preview img {
+    display: block;
+    border: solid 1px #999;
+    width: 100%;
+    height: auto;
+    max-width: 220px;
+    max-height: 143px;
+    margin: 0 auto 5px auto;
+  } 
+
+.news-content {
+    position: absolute;
+    background: white;
+    z-index: 10;
+    padding: 10px;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.top-content {
+    display: block;
+}
+
+/**
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    contenteditable attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that are clearfixed.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    *zoom: 1;
+}
