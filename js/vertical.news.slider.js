@@ -13,6 +13,8 @@ $(function () {
                     (parseInt(firstNewsItem.css('padding-bottom').replace('px', ''), 10)),
           vMargin = (parseInt(firstNewsItem.css('margin-top').replace('px', ''), 10)) +
                     (parseInt(firstNewsItem.css('margin-bottom').replace('px', ''), 10)),
+         cPadding = (parseInt($('.news-content').css('padding-top').replace('px', ''), 10)) +
+                    (parseInt($('.news-content').css('padding-bottom').replace('px', ''), 10)),
             speed = 5000, // this is the speed of the switch
           myTimer = null,
          siblings = null,
@@ -28,7 +30,7 @@ $(function () {
   hl = $('.highlight');
   newsListItems.addClass('nh-anim');
 
-  function doEqualHeight() {
+  function doEqualHeight(c) {
 
     if (newsPreview.height() < newsList.height()) {
       newsPreview.height(newsList.height());
@@ -36,6 +38,9 @@ $(function () {
       newsPreview.height(newsList.height());
     }
 
+    if ($('.news-content:nth-child(' + c + ')').height() > newsPreview.height()) {
+      newsPreview.height($('.news-content:nth-child(' + c + ')').height() + cPadding);
+    }
   }
 
   function doTimedSwitch() {
@@ -49,6 +54,14 @@ $(function () {
     }, speed);
 
   }
+
+  $('.news-content').on('mouseover', function () {
+    clearInterval(myTimer);
+  });
+
+  $('.news-content').on('mouseout', function () {
+      doTimedSwitch();
+  });
 
   function doClickItem() {
 
@@ -83,7 +96,7 @@ $(function () {
       // comment out the line below if you don't
       // want it to rotate automatically
       doTimedSwitch();
-
+      doEqualHeight(indexEl);
     });
 
   }
@@ -96,16 +109,13 @@ $(function () {
       // click is triggered to recalculate and fix the highlight position
       $('.selected').trigger('click');
 
-      doEqualHeight();
-
-    }); 
+    });
 
   }
 
   // this is the poor man's 'init' section
   doClickItem();
   doWindowResize();
-  doEqualHeight();
   $('.selected').trigger('click');
 
 });
