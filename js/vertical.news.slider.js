@@ -1,21 +1,21 @@
 /*globals window, $, clearInterval, setInterval */
 
 $(function () {
-  "use strict";
+  'use strict';
 
   var          hl,
          newsList = $('.news-headlines'),
     newsListItems = $('.news-headlines li'),
     firstNewsItem = $('.news-headlines li:nth-child(1)'),
       newsPreview = $('.news-preview'),
-          elCount = $('.news-headlines').children(':not(.highlight)').index(),
+          elCount = $('.news-headlines').children(':not(.highlight)').length,
          vPadding = (parseInt(firstNewsItem.css('padding-top').replace('px', ''), 10)) +
                     (parseInt(firstNewsItem.css('padding-bottom').replace('px', ''), 10)),
           vMargin = (parseInt(firstNewsItem.css('margin-top').replace('px', ''), 10)) +
                     (parseInt(firstNewsItem.css('margin-bottom').replace('px', ''), 10)),
          cPadding = (parseInt($('.news-content').css('padding-top').replace('px', ''), 10)) +
                     (parseInt($('.news-content').css('padding-bottom').replace('px', ''), 10)),
-            speed = 5000, // this is the speed of the switch
+            speed = 5000, // this is the speed of the switch in milliseconds
           myTimer = null,
          siblings = null,
       totalHeight = null,
@@ -46,7 +46,7 @@ $(function () {
   function doTimedSwitch() {
 
     myTimer = setInterval(function () {
-      if (($('.selected').prev().index() + 1) === elCount) {
+      if (($('.selected').index() + 1) === elCount) {
         firstNewsItem.trigger('click');
       } else {
         $('.selected').next(':not(.highlight)').trigger('click');
@@ -55,12 +55,15 @@ $(function () {
 
   }
 
+  // when the user mouses over a news content item
+  // the auto-switching will stop
   $('.news-content').on('mouseover', function () {
     clearInterval(myTimer);
   });
 
+  // auto-switching starts again
   $('.news-content').on('mouseout', function () {
-      doTimedSwitch();
+    doTimedSwitch();
   });
 
   function doClickItem() {
@@ -75,9 +78,9 @@ $(function () {
 
       // this loop calculates the height of individual elements, including margins/padding
       for (i = 0; i < siblings.length; i += 1) {
-          totalHeight += $(siblings[i]).height();
-          totalHeight += vPadding;
-          totalHeight += vMargin;
+        totalHeight += $(siblings[i]).height();
+        totalHeight += vPadding;
+        totalHeight += vMargin;
       }
 
       // this moves the highlight vertically the distance calculated in the previous loop
@@ -93,7 +96,7 @@ $(function () {
       $('.news-content:nth-child(' + indexEl + ')').addClass('top-content');
 
       clearInterval(myTimer);
-      // comment out the line below if you don't
+      // comment out doTimedSwitch() if you don't
       // want it to rotate automatically
       doTimedSwitch();
       doEqualHeight(indexEl);
@@ -113,7 +116,7 @@ $(function () {
 
   }
 
-  // this is the poor man's 'init' section
+  // this is where everything gets initialized
   doClickItem();
   doWindowResize();
   $('.selected').trigger('click');
