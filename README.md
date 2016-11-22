@@ -7,15 +7,15 @@ A jQuery and CSS-based slider module that displays news headlines on the left al
 ## Installation
 To install, just include the CSS file along with jQuery and the `vertical.news.slider.js` or `vertical.news.slider.min.js` file:
 
-	<head>
-		...
-		<link rel="stylesheet" href="css/vertical.news.slider.css">
-	</head>
-	<body>
-		...
-		<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-		<script src="js/vertical.news.slider.min.js"></script>
-	</body>
+  <head>
+    ...
+    <link rel="stylesheet" href="css/vertical.news.slider.css">
+  </head>
+  <body>
+    ...
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="js/vertical.news.slider.min.js"></script>
+  </body>
 
 It should work with any version of jQuery from 1.8 and up.
 
